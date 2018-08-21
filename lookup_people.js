@@ -1,6 +1,5 @@
 const pg = require("pg"); //pg is a driver for node
 
-// var settings = "postgres://postgres:secret@localhost/test_db";
 const settings = require("./settings");
 var id = process.argv[2];
 
