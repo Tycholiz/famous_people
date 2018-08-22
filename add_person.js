@@ -2,7 +2,18 @@ const pg = require("pg");
 const settings = require("./settings");
 var knex = require('knex')({
   client: 'pg',
-  connection: settings
+  connection: settings //tells what database we will use
+});
+
+//get all entries in table
+knex('users') //this is right db?
+  .select("*")
+  .asCallback((err, result) => {
+    if (err) {
+      console.error("error: ", err);
+    } else {
+      console.log(result);
+    }
 });
 
 var firstName = process.argv[2];
